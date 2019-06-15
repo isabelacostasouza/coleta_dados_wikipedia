@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 
 #create a list with the title os the pages you wanna get information of. Ex.: Brazil and Tennis
-list_pages = {'Brazil'}
+list_pages = {'Brazil', 'Tennis'}
 
 #create a loop that runs all the pages on the list
 for page_name in list_pages:
