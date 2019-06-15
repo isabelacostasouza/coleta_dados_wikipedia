@@ -6,11 +6,11 @@ import requests
 from bs4 import BeautifulSoup
 
 #create a list with the title os the pages you wanna get information of. Ex.: Brazil and Tennis
-list_pages = {'Brazil', 'Tennis'}
+list_pages = {'Brazil'}
 
 #create a loop that runs all the pages on the list
 for page_name in list_pages:
-    
+
     #set the wikipedia's URLs with the page's name
     final_url = ("https://en.wikipedia.org/w/api.php?action=query&titles=" + page_name + "&prop=links&pllimit=max")
 
@@ -27,23 +27,35 @@ for page_name in list_pages:
 
     #get the index where the links start to appear
     for i in range(len(links)-1):
-      if(links[i].contents[0] == '"links"'):
-        cont = i
-        break
+        if(links[i].contents[0] == '"links"'):
+            cont = i
+            break
 
     page_links = []
 
     #get all the links os the page
     for i in range((len(links)-cont)-1):
-      if(i % 3 == 0):
-        page_links.append(links[i + cont].contents[0])
+        if(i % 3 == 0):
+            page_links.append(links[i + cont].contents[0])
 
     #Create a .txt file with all the links of the page
     file_name = str(page_name) + "Page_links"
     f= open(file_name,"w+")
 
+    link_url = "https://en.wikipedia.org/wiki/"
+    cont = 0
+
     for link in page_links:
-      link = link.replace('"', '')
-      f.write("Wikipedia page: " + str(link) + "\n")
-    
+        if(cont > 0):
+            aux_url = ""
+            link = link.replace('"', '')
+            link = link.split(' ')
+            for i in range(len(link)):
+                if(i > 0):
+                    aux_url = aux_url + "_" + link[i]
+                else:
+                    aux_url = link[i]
+            f.write(link_url + str(aux_url) + "\n")
+        cont += 1
+
     f.close()
