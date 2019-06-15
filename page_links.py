@@ -1,4 +1,4 @@
-#Autor: Isabela Costa Souza (isabela.costasouza10@gmail.com)
+#Author: Isabela Costa Souza (isabela.costasouza10@gmail.com)
 #GitHub: https://github.com/isabelacostasouza/wikipedia_data_collector
 #Date: 06.14.2019
 
