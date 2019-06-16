@@ -5,8 +5,14 @@
 import requests
 from bs4 import BeautifulSoup
 
-#create a list with the title os the pages you wanna get information of. Ex.: Brazil and Tennis
-list_pages = {'Brazil', 'Tennis'}
+#read file "wikipages.txt" and storage the titles of the articles wanted
+list_pages = set()
+f=open("wikipages.txt", "r")
+if f.mode == 'r':
+  contents = f.read()
+  contents = contents.split(',')
+  for content in contents:
+    list_pages.add(content)
 
 #create a loop that runs all the pages on the list
 for page_name in list_pages:
