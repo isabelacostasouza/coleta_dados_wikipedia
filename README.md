@@ -5,3 +5,4 @@ The file 'page_info' allows you to inform a .txt file with a list of wikipedia p
 
 The file 'page_links' allows you to inform a .txt file with a list of wikipedia pages and it returns to you TXT for each of the pages, containing all the wikipedias's links of that page
 
+The file 'page_classes' allows you to inform a .txt file with a list of wikipedia pages and it returns to you TXT for each of the pages, containing all the wikipedias's classes of that page
