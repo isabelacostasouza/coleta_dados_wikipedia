@@ -11,7 +11,7 @@ list_pages = set()
 f=open("wikipages.txt", "r")
 if f.mode == 'r':
     contents = f.read()
-    contents = contents.split(',')
+    contents = contents.splitlines()
     for content in contents:
         list_pages.add(content)
 
